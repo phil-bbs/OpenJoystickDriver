@@ -67,8 +67,11 @@ USB_OPEN interface=0 route=ioUSBHost result=opened
 USB_TX endpoint=0x2 bytes=05 20 01 01 00
 USB_TX endpoint=0x2 bytes=0a 20 01 03 00 01 14
 USB_TX endpoint=0x2 bytes=06 20 01 02 01 00
-RECORD_HANDSHAKE driver=GIP result=complete
+RECORD_HANDSHAKE driver=XboxGIP:USB result=complete
 ```
+
+The last line reports that the startup writes completed. It does not confirm a
+device-acknowledged GIP handshake.
 
 Test neutral plus press/release for every face button, D-pad direction, trigger,
 stick axis, and stick click. `RECORD_SUMMARY` must report `parse_errors=0`.
